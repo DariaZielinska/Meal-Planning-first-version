@@ -137,7 +137,14 @@ header {
           font-size: 15px;
           margin-left: 8em;
           border-style: none;
+          a{
+            list-style: none;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+          }
       }
+
     }
   }
 }
