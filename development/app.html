@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script src="./js/app.js" charset="utf-8"></script>
+</head>
+<body>
+
+<div class="app">
+    <header>
+        <h1>
+            <a href="index.html">
+                <span id="first">Zaplanuj</span>
+                <span id="second">Jedzonko</span>
+            </a>
+        </h1>
+        <ul class="menu">
+            <li>Imię</li>
+            <li><i class="avatar fas fa-user-circle"></i></li>
+        </ul>
+    </header>
+    <section>
+
+        <ul class="menu">
+            <a href="app.html"><li class="selected">Pulpit</li></a>
+            <a href="recipes.html"><li>Przepisy</li></a>
+            <a href="schedules.html"><li>Plany</li></a>
+        </ul>
+
+        <div class="dashboard">
+
+            <div id="welcome" class="container_welcome">
+                <div class="center_container">
+                    <h1>Witaj,</h1>
+                    <h3>wygląda na to że jesteś tutaj pierwszy raz!</h3>
+                    <label>
+                        <input type="text" placeholder="tutaj wpisz jak masz na imię">
+                        <br>
+                        <button type="submit">Gotowe!</button>
+                    </label>
+                    <p>Podaj nam swoje imię, a my zorganizujemy<br>dla ciebie naszą aplikację :)</p>
+                </div>
+
+            </div>
+
+            <div id="widgets" class="widgets hidden">
+                <div class="add">
+
+                    <i class="far fa-plus-square"></i>
+                    <h3>dodaj przepis</h3>
+                </div>
+                <div id="addingPlan" class="add">
+
+                    <i class="far fa-plus-square"></i>
+                    <h3 >dodaj plan</h3>
+                </div>
+                <div class="notifications">
+
+                    <div>
+                        <i class="fas fa-info-circle"></i>
+                        <h2>Masz już 99 przepisów, nieźle!</h2>
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h2>Pamiętaj, aby dodać plan!</h2>
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Świetnie, że jesteś! Udanego planowania i smacznego! :)</h2>
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div id="plan" class="weekPlan hidden">
+
+                <div class="grid-container">
+
+                    <div class="row">
+                        <div class="col-7">Twój plan na <span id="here"></span> tydzień:</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1 day">Poniedziałek</div>
+                        <div class="col-1 day">Wtorek</div>
+                        <div class="col-1 day">Środa</div>
+                        <div class="col-1 day">Czwartek</div>
+                        <div class="col-1 day">Piątek</div>
+                        <div class="col-1 day">Sobota</div>
+                        <div class="col-1 day">Niedziela</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1">Śniadanie</div>
+                        <div class="col-1">Śniadanie</div>
+                        <div class="col-1">Śniadanie</div>
+                        <div class="col-1">Śniadanie</div>
+                        <div class="col-1">Śniadanie</div>
+                        <div class="col-1">Śniadanie</div>
+                        <div class="col-1">Śniadanie</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1">Drugie śniadanie</div>
+                        <div class="col-1">Drugie śniadanie</div>
+                        <div class="col-1">Drugie śniadanie</div>
+                        <div class="col-1">Drugie śniadanie</div>
+                        <div class="col-1">Drugie śniadanie</div>
+                        <div class="col-1">Drugie śniadanie</div>
+                        <div class="col-1">Drugie śniadanie</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1">Zupa</div>
+                        <div class="col-1">Zupa</div>
+                        <div class="col-1">Zupa</div>
+                        <div class="col-1">Zupa</div>
+                        <div class="col-1">Zupa</div>
+                        <div class="col-1">Zupa</div>
+                        <div class="col-1">Zupa</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1">Drugie danie</div>
+                        <div class="col-1">Drugie danie</div>
+                        <div class="col-1">Drugie danie</div>
+                        <div class="col-1">Drugie danie</div>
+                        <div class="col-1">Drugie danie</div>
+                        <div class="col-1">Drugie danie</div>
+                        <div class="col-1">Drugie danie</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1">Kolacja</div>
+                        <div class="col-1">Kolacja</div>
+                        <div class="col-1">Kolacja</div>
+                        <div class="col-1">Kolacja</div>
+                        <div class="col-1">Kolacja</div>
+                        <div class="col-1">Kolacja</div>
+                        <div class="col-1">Kolacja</div>
+                    </div>
+
+                </div>
+
+                <div class="prev_next">
+                    <a>&lt&lt poprzedni</a>
+                    <a>następny &gt &gt</a>
+                </div>
+
+            </div>
+
+            <!----------------------------------------------------------------------------------------->
+            <!-- ADD NEW RECIPE BOARD -->
+
+            <div>
+
+                <form class="recipe hidden">
+
+                    <div class="formRowSpace underline">
+                        <h2>NOWY PRZEPIS</h2><input id="submit" type="submit" value="Zapisz i zamknij">
+                    </div>
+
+                    <div id="formErrorMessages">
+                    </div>
+
+                    <div class="formRowStart">
+                        <label for="recipeName">Nazwa przepisu</label>
+                        <input type="text" id="recipeName" placeholder="Tutaj wpisz nazwę przepisu">
+                    </div>
+
+                    <div class="formRowStart">
+                        <label for="recipeDesc">Opis przepisu</label>
+                        <textarea rows="4" id="recipeDesc"
+                                  placeholder="Tutaj wpisz informacje o swoim przepisie"></textarea>
+                    </div>
+
+                    <div class="formRowSpace">
+                        <div class="listSection">
+                            <label for="recipeInstructionsInput">INSTRUKCJE</label>
+                            <div class="formRowSpace">
+                                <textarea rows="3" id="recipeInstructionsInput"
+                                          placeholder="Tutaj opisz sposób przygotowania"></textarea>
+                                <i id="recipeInstructionAdd" class="fas fa-plus-square"></i>
+                            </div>
+                        </div>
+
+                        <div class="listSection">
+                            <label for="recipeIngredientsInput">SKŁADNIKI</label>
+                            <div class="formRowSpace">
+                                <input type="text" id="recipeIngredientsInput"
+                                       placeholder="Tutaj wpisz potrzebne składniki">
+                                <i id="recipeIngredientAdd" class="fas fa-plus-square"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formRowSpace">
+                        <ol class="list" id="recipeInstructions">
+                        </ol>
+                        <ul class="list" id="recipeIngredients">
+                        </ul>
+                    </div>
+
+
+                </form>
+
+            </div>
+
+            <!----------------------------------------------------------------------------------------->
+            <!-- ADD NEW PLAN BOARD -->
+            <div id="addPlan" class="addPlan hidden">
+
+                <div class="weekPlan">
+
+                    <div class="planTittle">
+                        <h1>NOWY PLAN</h1>
+                        <input id="addPlanSubmit" type="submit" value="Zapisz i zamknij">
+                    </div>
+                    <div id="errorMessageContainer">
+
+                    </div>
+
+                    <div> <!--div mieszczacy wszystko poza naglowkiem-->
+
+                        <div class="abovePlan"> <!--div dla pól ponad planem-->
+
+                            <h2>Nazwa planu</h2>
+                            <label>
+                                <textarea id="planName" placeholder="Nazwij swój plan"></textarea>
+                            </label>
+                        </div>
+                        <div class="abovePlan">
+                            <h2>Opis planu</h2>
+                            <label>
+                                <textarea id="planDescription" placeholder="Napisz kilka słów o swoim planie"></textarea>
+                            </label>
+                        </div>
+
+                        <div class="abovePlan closer">
+                            <h2>Numer tygodnia</h2>
+                            <label>
+                                <input id="planNumber" type="text">
+                            </label>
+                        </div>
+
+                        <div class="gridPlan">
+
+                            <div class="row">
+                                <div class="col-1 meal invisible">  HIDDEN </div>
+                                <div class="col-1 meal">ŚNIADANIE</div>
+                                <div class="col-1 meal">DRUGIE ŚNIADANIE</div>
+                                <div class="col-1 meal">ZUPA</div>
+                                <div class="col-1 meal">DRUGIE DANIE</div>
+                                <div class="col-1 meal">KOLACJA</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1 day">PONIEDZIAŁEK</div>
+                                <div class="col-1">
+                                        <select>
+                                            <option value="0">Zupa brukselkowa</option>
+                                            <option value="1">Leczo</option>
+                                            <option value="2">Zapiekanka</option>
+                                            <option value="3">Pizza</option>
+                                        </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1 day">WTOREK</div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1 day">ŚRODA</div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1 day">CZWARTEK</div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1 day">PIĄTEK</div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-1 day">SOBOTA</div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row last">
+                                <div class="col-1 day">NIEDZIELA</div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <select>
+                                        <option value="0">Zupa brukselkowa</option>
+                                        <option value="1">Leczo</option>
+                                        <option value="2">Zapiekanka</option>
+                                        <option value="3">Pizza</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

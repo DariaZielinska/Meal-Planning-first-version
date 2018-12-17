@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:400,700');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.container{
+  width: 80vw;
+  display: flex;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #4A4A49;
+  .top {
+    align-items: center;
+    width:90vw;
+    display:flex;
+    height:10vh;
+    justify-content: space-between;
+    margin: 0 auto;
+    h1 {
+      font-family: 'Charmonman', cursive;
+      font-size:3em;
+      font-weight: 400;
+      span:first-child {
+        color:white;
+      }
+      span:last-child{
+        color:#E58A20;
+      }
+    }
+    ul{
+      align-items: center;
+      display:flex;
+      text-align: center;
+      word-spacing: 3px;
+      font-size: 1.5em;
+      li{
+        padding:0 1.5em;
+        a{
+          color: white;
+          text-decoration: none;
+          &:hover{
+            color:#E58A20;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Slider */
+
+@mixin arrow ($color, $direction, $size){
+  display: inline-block;
+  width: $size;
+  height: $size;
+  border-top: 4px solid $color;
+  border-right: 4px solid $color;
+  margin-top: 20px;
+  margin-left: 20px;
+  @if $direction == left{
+    transform: rotate(-135deg);
+  }
+  @else if $direction == right{
+    transform: rotate(45deg);
+  }
+}
+
+.slider {
+  background-color: #FFFFFA;
+  .carousel {
+    margin:0 auto;
+    width:90vw;
+    height: 50vh;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    .firstArrow {
+      @include arrow (black, left, 22px);
+    }
+    .secondArrow {
+      @include arrow (black, right, 22px);
+    }
+    .textSlider h1{
+      margin-bottom:15px;
+      font-weight: 600;
+      font-size: 1.2em; 
+    }
+    .textSlider p{
+      font-size: 0.8em;
+      margin-left: 7em;
+      margin-right: 7em;
+    }
+  }
+}
+
+// CtA + button
+
+.callToAction {
+  background-color:#4A4A49;
+    .callToActionContainer {
+      width:90vw;
+      height:30vh;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      align-items: center;
+      .textContainer{  
+        width:70%;
+        text-align: left;
+        font-size: 2em;
+        color:white;
+        margin-left:3em;
+        h3{
+          padding-bottom:1em;
+          font-weight: 600;
+          font-size: 1.2em;
+        }
+        p{
+          font-size:0.8em;
+        }
+      }
+      .buttonContainer {
+        width:30%;
+        .actionButton {
+          width:15em;
+          height:4em;
+          background-color:#FF6600;
+          color:white;
+          font-weight: 800;
+          font-size: 15px;
+          margin-left: 8em;
+          border-style: none;
+      }
+    }
+  }
+}
+
+.features {
+  background-color: #EBEBEB;
+  .container {
+    justify-content: space-between;
+    padding: 50px 0;
+    div {
+      text-align: center;
+      color: #5B605F;
+      max-width: 20vw;
+      i {
+        color: #A1A194;
+      }
+      h3 {
+        font-size: 2rem;
+        font-weight: lighter;
+        letter-spacing: 1px;
+        padding: 10px
+      }
+      p{
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.newsletter {
+  background-color: #5B605F;
+  .container {
+    padding: 30px 0;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      font-size: 3rem;
+      font-weight: normal;
+      letter-spacing: -1px;
+      color: #FFFFFA;
+    }
+    input, button {
+      border: none;
+      height: 3.5rem;
+      width: 16rem;
+    }
+    button {
+      background-color: #FF6601;
+      color: #FAFBF6;
+      font-weight: bold;
+      width: 9rem;
+    }
+  }
+}
+
+.aboutMe{
+  background-color: #EBEBEB;
+  .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+    .myPhoto {
+      border: 1px solid #5B605F;
+      background-color: #5B605F;
+      width: 350px;
+      height: 350px;
+      display: block;
+    }
+    .aboutMeInfo{
+      max-width: 700px;
+      h3{
+        font-size: 2rem;
+        font-weight: lighter;
+        margin-bottom: 20px;
+      }
+      p{
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+.columns {
+  background-color:#5B605F;
+  color:white;
+  .threeColumns{
+    display: flex;
+    width:80vw;
+    margin:0 auto;
+    height: 30vh;
+    align-items: center;
+    justify-content: space-between;
+  
+    .firstColumn {
+      height: 70%;
+      width:20em;
+      h3{
+        font-size: 1.9em;
+        padding-bottom:0.6em;
+      }
+      p{
+        font-size:1.2em;
+      }
+    }
+    .secondColumn {
+      height: 70%;
+      h3{
+        font-size: 1.9em;
+        padding-bottom:0.6em;
+      }
+
+      ul{
+        list-style-type: disc;
+        padding-left: 1.5em;
+        li{
+          margin-bottom: 0.4em;
+          font-size:1.3em;
+        }
+      }
+    }
+    .thirdColumn {
+      height: 70%;
+      display:flex;
+      flex-direction: column;
+      h3{
+        font-size: 1.9em;
+        padding-bottom:0.6em;
+      }
+      input{
+      border: none;
+      height: 2.0rem;
+      width: 16rem;
+      }
+      .columnButton{
+        background-color: #FF6601;
+        color: #FAFBF6;
+        font-weight: bold;
+        width: 4rem;
+        border-style: none;
+        height: 2.0rem;
+      }
+      .emoji{
+        display:flex;
+        margin-top:0.8em;
+        font-size:50px;
+        justify-content: space-between;
+        width:5.5em;
+      }
+    }
+  }
+}
+
+.foot {
+  background-color:#464646;
+  .endPage{
+    margin:0 auto;
+    height:7vh;
+    width:90vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    word-spacing: 5px;
+    p{
+      color:white;
+      span{
+        color:#FF6601;
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+//html, body {
+//  height: 100%;
+//  background-color: #292F32;
+//  background-image: url('../images/background.png');
+//}
+
+.app {
+  background-image: url('../images/background.png');
+  ul.menu {
+    // domyślna wielkość tekstu
+    li {
+      color: white;
+      font-size: 1.7rem;
+    }
+  }
+  header {
+    //height: 10%;
+    //min-height: 4rem;
+    height: 10vh;
+    background-color: #4a4a49;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    // Logo
+    h1 {
+      font-family: Charmonman, cursive;
+      font-size: 1.7rem;
+      margin-left: 1rem;
+      a {
+        text-decoration: none;
+      }
+      #first {
+        font-weight: 100;
+        color: white;
+      }
+      #second {
+        // niby był ten #FF6600 - ale nie pasuje do reszty wcale
+        color: $colorBtn;
+        font-weight: 700;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      li {
+        // rozmiar dla wszystkich ikon
+        i {
+          color: $colorBtn;
+          font-size: 3rem;
+        }
+        // odsunięcie avatara od krawędzi
+        .avatar {
+          padding: 0 3rem 0 1rem;
+        }
+      }
+      li:first-of-type {
+        padding-right: 1rem;
+      }
+      // ten padding przeniesiony do .avatar
+      //li:last-of-type {
+      //  padding-left: 1rem;
+      //}
+    }
+  }
+
+  section {
+    display: flex;
+    height: 90vh;
+    ul.menu {
+      background-color: $colorNav;
+      //height: 100%;
+      height: 90vh;
+      width: 13.3vw;
+      min-width: 11rem;
+      a {
+        text-decoration: none;
+      }
+      li {
+        padding: 2rem 0 2rem 2rem;
+      }
+      // W JS będziemy dawać tą klasę aktualnie wybranemu elementowi
+      .selected {
+        font-weight: 700;
+        position: relative;
+        &:before {
+          content: '';
+          background-color: $colorBtn;
+          width: 0.4rem;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:after {
+          content: '';
+          border: solid $colorBtn;
+          border-width: 0 0.15rem 0.15rem 0;
+          display: inline-block;
+          padding: 0.35rem;
+
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+
+          position: absolute;
+          top: 2.9rem;
+          right: 1rem;
+        }
+      }
+    }
+    .dashboard {
+      .schedulesList {
+        width: 79.5vw;
+        height: 85vh;
+        background-color: #FFFFFA;
+        border: 1px dashed brown;
+        .schedulesListMain {
+          display: flex;
+          justify-content: space-between;
+          width: 74vw;
+          border-bottom: 2px solid #D2D2D1;
+          margin: 2rem 3rem;
+          h2 {
+            font-size: 2rem;
+            color: $colorBtn;
+            font-weight: bold;
+          }
+          i {
+            color: green;
+          }
+        }
+        .schedulesListName {
+          width: 70vw;
+          display: flex;
+          border-bottom: 1px solid #D2D2D1;
+          border-top: 1px solid #D2D2D1;
+          margin: 0 auto;
+          h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 1rem;
+            color: #5D6261;
+          }
+          h3:nth-of-type(1) {
+            width: 5vw;
+          }
+          h3:nth-of-type(2) {
+            width: 15vw;
+          }
+          h3:nth-of-type(3) {
+            width: 42vw;
+          }
+          h3:nth-of-type(4) {
+            width: 13vw;
+          }
+        }
+        .scroll {
+          width: 70vw;
+          height: 50vh;
+          overflow-y: scroll;
+          margin: 0 3.3rem;
+          .schedulesTable {
+            //width: 65vw;
+           // height: 40vh;
+
+            td {
+              padding: 1rem;
+              color: #B9B9AF;
+              border-bottom: 1px solid #D2D2D1;
+            }
+            td:nth-of-type(1) {
+              width: 5vw;
+            }
+            td:nth-of-type(2) {
+              width: 15vw;
+            }
+            td:nth-of-type(3) {
+              width: 45vw;
+            }
+            td:nth-of-type(4) {
+              width: 10vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}

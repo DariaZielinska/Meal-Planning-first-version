@@ -1,0 +1,552 @@
+//html, body {
+//  height: 100%;
+//  background-color: #292F32;
+//  background-image: url('../images/background.png');
+//}
+
+.app {
+  background-image: url('../images/background.png');
+  ul.menu {
+    // domyślna wielkość tekstu
+    li {
+      color: white;
+      font-size: 1.7rem;
+    }
+  }
+  header {
+    //height: 10%;
+    //min-height: 4rem;
+    height: 10vh;
+    background-color: #4a4a49;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    // Logo
+    h1 {
+      font-family: Charmonman, cursive;
+      font-size: 1.7rem;
+      margin-left: 1rem;
+      #first {
+        font-weight: 100;
+        color: white;
+      }
+      #second {
+        // niby był ten #FF6600 - ale nie pasuje do reszty wcale
+        color: $colorBtn;
+        font-weight: 700;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      li {
+        // rozmiar dla wszystkich ikon
+        i {
+          color: $colorBtn;
+          font-size: 3rem;
+        }
+        // odsunięcie avatara od krawędzi
+        .avatar {
+          padding: 0 3rem 0 1rem;
+        }
+      }
+      li:first-of-type {
+        padding-right: 1rem;
+      }
+      // ten padding przeniesiony do .avatar
+      //li:last-of-type {
+      //  padding-left: 1rem;
+      //}
+    }
+  }
+  section {
+    display: flex;
+    height: 90vh;
+    ul.menu {
+      background-color: $colorNav;
+      //height: 100%;
+      height: 90vh;
+      width: 13.3vw;
+      min-width: 11rem;
+      a{
+        text-decoration: none;
+      }
+      li {
+        padding: 2rem 0 2rem 2rem;
+      }
+      // W JS będziemy dawać tą klasę aktualnie wybranemu elementowi
+      .selected {
+        font-weight: 700;
+        position: relative;
+        &:before {
+          content: '';
+          background-color: $colorBtn;
+          width: 0.4rem;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:after {
+          content: '';
+          border: solid $colorBtn;
+          border-width: 0 0.15rem 0.15rem 0;
+          display: inline-block;
+          padding: 0.35rem;
+
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+
+          position: absolute;
+          top: 2.9rem;
+          right: 1rem;
+        }
+      }
+    }
+
+    // } //<- te dwa znaczniki trzeba usunac zeby dzialal dashbord
+    // } //<- te dwa znaczniki trzeba usunac zeby dzialal dashbord
+
+    .dashboard {
+      width: 79.5vw;
+      height: 85vh;
+      //margin: 2.5rem 0 0 2.5rem;
+      margin: 2.5vw 0 0 2.5vw;
+      //background-color: black;
+      .widgets {
+        width: 79.5vw;
+        // Dodaj przepis / plan
+        .add {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          //width: 14rem;
+          //height: 14rem;
+          width: 13vw;
+          height: 13vw;
+          background-color: white;
+          color: $colorSuccess;
+          //border: 0.05rem dashed $colorSuccess;
+          border: 0.05vw dashed $colorSuccess;
+          // zmiana kursora
+          cursor: pointer;
+          i {
+            //font-size: 5rem;
+            font-size: 5vw;
+            //margin-bottom: 0.5rem;
+            margin-bottom: 0.5vw;
+          }
+          h3 {
+            //font-size: 1.5rem;
+            font-size: 1.5vw;
+            font-weight: 700;
+          }
+        }
+        .notifications {
+          width: 51vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          //background-color: white;
+          div {
+            //height: 4rem;
+            height: 4vw;
+            //border: 0.05rem dashed;
+            border: 0.05vw dashed;
+            background-color: white;
+            &:first-of-type {
+              color: $colorInfo;
+              border-color: $colorInfo;
+            }
+            &:nth-of-type(2) {
+              color: $colorWarning;
+              border-color: $colorWarning;
+            }
+            &:last-of-type {
+              color: $colorSuccess;
+              border-color: $colorSuccess;
+            }
+            i {
+              &:first-of-type {
+                float: left;
+                //font-size: 2.5rem;
+                font-size: 2.5vw;
+                line-height: 4vw;
+                //margin: 0 1rem 0 0.5rem;
+                margin: 0 1vw 0 0.5vw;
+              }
+              &:last-of-type {
+                float: right;
+                //font-size: 1.5rem;
+                font-size: 1.5vw;
+                //margin: 0.5rem 0.5rem 0 0;
+                margin: 0.5vw 0.5vw 0 0;
+              }
+            }
+            h2 {
+              float: left;
+              //font-size: 1.2rem;
+              font-size: 1.2vw;
+              font-weight: 700;
+              line-height: 4vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.widgets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_welcome {
+  width: 79.5vw;
+  height: 85vh;
+  background-color: #FFFFFA;
+  border: 1px dashed brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  text-align: center;
+  .center_container {
+    margin-top: -30vh;
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 0.3em;
+    }
+    h3 {
+      font-size: 2em;
+      margin-bottom: 0.6em;
+    }
+    input {
+      width: 18vw;
+      margin-bottom: 0.8em;
+      height: 2em;
+    }
+    button {
+      background-color: #FF6601;
+      color: #FAFBF6;
+      border-style: none;
+      height: 3vh;
+      width: 7vw;
+      font-weight: bold;
+      margin-bottom: 1.5em;
+      font-size: 1.3em;
+    }
+    p {
+      font-size: 2em;
+    }
+  }
+}
+
+.grid-container {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  .row {
+    &:before, &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    $number-of-columns: 7;
+    $min-col-width: 75vw / $number-of-columns;
+    @for $i from 1 through 7 {
+      .col-#{$i} {
+        width: $min-col-width * $i;
+        float: left;
+        min-height: 1px;
+        border-bottom: 1px solid #CBCBCB;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
+
+.weekPlan {
+  width: 79.5vw;
+  border: 1px dashed #CACAC4;
+  margin: 1.5rem 0;
+  background-color: white;
+  font-size: 1rem;
+  color: #A6A197;
+  text-align: center;
+  //line-height: 4rem;
+  .col-7 {
+    font-size: 1.5vw;
+    text-align: center;
+    color: #FF6600;
+  }
+  .day {
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-align: center;
+    color: #5B605F;
+    //padding: 1rem;
+  }
+  .prev_next {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.7rem;
+    a {
+      color: #FF6600;
+      cursor: pointer;
+    }
+
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+//--------------------------------------------------------------------------
+// ADD NEW RECIPE FORM
+
+div.dashboard div {
+  form.recipe {
+    position: absolute;
+    top: 7.6vw;
+    right: 3.82vw;
+
+    border: 1px dashed $colorTabData;
+    color: $colorHead;
+    width: 79.5vw;
+    height: 85vh;
+    background-color: $colorBg;
+    padding: 25px;
+
+    textarea {
+      resize: none;
+    }
+
+    .formRowSpace {
+      display: flex;
+      justify-content: space-between;
+    }
+    .formRowStart {
+      display: flex;
+      justify-content: flex-start;
+      margin: 10px 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $colorBtn;
+    }
+    input, textarea {
+      padding-left: 5px;
+    }
+    li {
+      font-size: 1rem;
+    }
+
+    #submit {
+      /* THIS border REMOVED SHADOW */
+      border: 1px solid $colorBtn;
+      background-color: $colorBtn;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 5px 10px;
+    }
+
+    label {
+      font-size: 1.5rem;
+      //margin-left: 5px;
+      &[for="recipeName"],
+      &[for="recipeDesc"] {
+        width: 17%;
+      }
+    }
+    #recipeName,
+    #recipeDesc {
+      width: 74%;
+    }
+  }
+}
+
+.listSection {
+  width: 40%;
+  height: 120px;
+  h2 {
+    color: $colorHead;
+    font-weight: normal;
+  }
+  input,
+  textarea {
+    width: 93%;
+  }
+  i {
+    font-size: 2rem;
+    color: $colorSuccess;
+  }
+}
+
+.list {
+  width: 40%;
+  li {
+    margin-left: 20px;
+    i {
+      font-size: 1rem;
+      &:first-of-type {
+        color: $colorWarning;
+      }
+      &:last-of-type {
+        color: $colorBin;
+      }
+    }
+  }
+}
+
+#recipeIngredients {
+  list-style-type: disc;
+}
+
+#recipeInstructions, #recipeIngredients {
+  height: 300px;
+  overflow-y: auto;
+  background-color: $colorBg;
+  border: none;
+  color: $colorHead;
+}
+
+#formErrorMessages {
+  color: red;
+  margin-top: 5px;
+}
+
+.underline {
+  border-bottom: 2px solid $colorTabData;
+  padding-bottom: 5px;
+}
+
+//--------------------------------------------------------------ADD PLAN-------//
+.addPlan{
+  .weekPlan{
+    margin: 0;
+    border: 1px dashed #A1A194;
+    padding: 1.5rem;
+    .planTittle{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #CBCBCB;
+      padding-bottom: 0.5rem;
+      h1{
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $colorBtn;
+        }
+      input{
+        border: 1px solid $colorBtn;
+        background-color: $colorBtn;
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 700;
+        padding: 5px 10px;
+        }
+      }
+    .abovePlan{
+      width: 70vw;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      h2{
+        font-size: 1.5rem;
+        color: #5B605F;
+      }
+      textarea{
+        width: 50vw;
+        height: 2rem;
+        resize: none;
+        overflow-y: scroll;
+      }
+      #planDescription{
+        height: 6rem;
+      }
+      #planNumber{
+       // border-style: none;
+        border: 1px solid #BBB7B3;
+        width: 2.5rem;
+        height: 2rem;
+        padding: 0.3rem;
+      }
+    }
+    .closer{
+      width: 22vw;
+
+    }
+    #errorMessageContainer{
+      border: 1px solid transparent;
+      border-radius: 1rem;
+      color: $colorBtn;;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+      p{
+        text-align: right;
+      }
+    }
+  }
+}
+
+.gridPlan {
+  width: 70vw;
+  .row {
+    &:before, &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    $number-of-columns: 6;
+    $min-col-width: 70vw / $number-of-columns;
+    @for $i from 1 through 6 {
+      .col-#{$i} {
+        width: $min-col-width * $i;
+        float: left;
+        min-height: 1px;
+        border-top: 1px solid #CBCBCB;
+        padding: 0.2rem 0;
+      }
+    }
+    .meal{
+      font-weight: bolder;
+      font-size: 1.5rem;
+      line-height: 1.3rem;
+      height: 3rem;
+      text-align: center;
+      border-top: 1px  solid #CBCBCB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #5B605F;
+    }
+    .invisible{
+      visibility: hidden;
+    }
+    .day{
+      font-weight: bolder;
+      font-size: 1.2rem;
+    }
+  }
+  .last{
+    border-bottom: 1px solid #CBCBCB;
+  }
+  select{
+    width: 10vw;
+
+
+  }
+}
+
+
+
